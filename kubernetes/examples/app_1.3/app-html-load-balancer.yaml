@@ -1,0 +1,18 @@
+# API VERSIONS:
+# POD: v1
+# SERVICE: v1
+# DEPLOYMENT: apps/v1
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-html-load-balancer
+spec:
+  selector:
+    app: app-html
+  ports:
+    - port: 80
+      targetPort: 80 # Load balancer port
+  type: LoadBalancer
+
+# Apply: kubectl apply -f app-html-load-balancer.yaml
+# Check: kubectl get services

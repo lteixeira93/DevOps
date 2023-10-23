@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend-rs
+  labels:
+    app: frontend
+spec: 
+  template:
+    # Data from nginx.yaml to be replicated
+    metadata:
+      name: nginx-pod
+      labels:
+        env: production
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+  selector: 
+    matchLabels:
+      # In case of ReplicationController instead of ReplicaSet only use "type"
+      env: production
+  replicas: 2

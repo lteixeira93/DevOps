@@ -1,0 +1,28 @@
+# File source: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+apiVersion: apps/v1
+kind: Deployment # Create replicas
+metadata:
+  name: app-html-deployment
+  labels:
+    app: app-html
+# Configuring replicas
+spec:
+  replicas: 3
+
+  # Configure what to replicate
+  selector:
+    matchLabels:
+      app: app-html
+  
+  # Identify replica
+  template:
+    metadata:
+      labels:
+        app: app-html
+    spec:
+      containers:
+      - name: app-html
+        image: httpd:latest
+        ports:
+        - containerPort: 80
+    

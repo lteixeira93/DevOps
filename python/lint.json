@@ -1,0 +1,41 @@
+[
+    {
+        "type": "error",
+        "module": "Command line or configuration file",
+        "obj": "",
+        "line": 1,
+        "column": 0,
+        "endLine": null,
+        "endColumn": null,
+        "path": "Command line or configuration file",
+        "symbol": "bad-plugin-value",
+        "message": "Plugin 'pylint_gitlab' is impossible to load, is it installed ? ('No module named 'pylint_gitlab'')",
+        "message-id": "E0013"
+    },
+    {
+        "type": "convention",
+        "module": "cap",
+        "obj": "",
+        "line": 6,
+        "column": 0,
+        "endLine": null,
+        "endColumn": null,
+        "path": "007-UnitTest/cap/cap.py",
+        "symbol": "missing-final-newline",
+        "message": "Final newline missing",
+        "message-id": "C0304"
+    },
+    {
+        "type": "convention",
+        "module": "cap",
+        "obj": "",
+        "line": 1,
+        "column": 0,
+        "endLine": null,
+        "endColumn": null,
+        "path": "007-UnitTest/cap/cap.py",
+        "symbol": "missing-module-docstring",
+        "message": "Missing module docstring",
+        "message-id": "C0114"
+    }
+]

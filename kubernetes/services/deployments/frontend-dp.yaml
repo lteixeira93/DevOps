@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: # Deployment metadata
+  name: frontend-dp
+  labels:
+    app: frontend-app # Random name
+    type: frontend # Random name
+spec:
+  template:
+    metadata: # POD metadata
+      name: frontend-pod
+      labels:
+        app: frontend-app
+        type: frontend
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+  selector:
+    matchLabels: 
+      type: frontend # Or app:
+  replicas: 6
+
+# Or add frontend-svc here separating by '---'
+
+# --- 
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: frontend-svc
+# spec:
+#   selector:
+#     type: frontend
+#   ports:
+#     - name: http
+#       port: 80
+#       nodePort: 30080
+#   type: NodePort
